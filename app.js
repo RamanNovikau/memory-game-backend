@@ -68,7 +68,7 @@ app.get('/best-scores', function (request, response) {
     collection.find({}).toArray(function (err, result) {
         if (err) throw err;
         response.send(result.sort((a, b) => {
-            return a.score - b.score;
+            return Number(b.score) - Number(a.score);
         }).slice(0, 10));
     });
 });
