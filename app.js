@@ -15,7 +15,7 @@ mongoClient.connect((err, client) => {
     if (err) return console.log(err);
     dbClient = client;
     app.locals.collection = client.db("memory-game-score").collection("score");
-    app.listen(3000, function () {
+    app.listen(port, function () {
         console.log("Сервер ожидает подключения...");
     });
 });
